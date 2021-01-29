@@ -7,20 +7,14 @@ class CoffeeFlavour {
     private final String name;
     private static final WeakHashMap<String, CoffeeFlavour> CACHE = new WeakHashMap<>();
 
-    // only intern() can call this constructor
+    // only cache() can call this constructor
     private CoffeeFlavour(String name) {
         this.name = name;
     }
 
-    public static CoffeeFlavour intern(String name) {
+    public static CoffeeFlavour cache(String name) {
         synchronized (CACHE) {
             return CACHE.computeIfAbsent(name, CoffeeFlavour::new);
-        }
-    }
-
-    public static int flavoursInCache() {
-        synchronized (CACHE) {
-            return CACHE.size();
         }
     }
 
@@ -35,7 +29,7 @@ interface Order {
     void serve();
 
     static Order of(String flavourName, int tableNumber) {
-        CoffeeFlavour flavour = CoffeeFlavour.intern(flavourName);
+        CoffeeFlavour flavour = CoffeeFlavour.cache(flavourName);
         return () -> System.out.println("Serving " + flavour + " to table " + tableNumber);
     }
 }
@@ -52,7 +46,7 @@ class CoffeeShop {
     }
 }
 
-public class FlyweightExample {
+public class Main {
     public static void main(String[] args) {
         CoffeeShop shop = new CoffeeShop();
 
