@@ -2,7 +2,7 @@ package sd.design.patterns.simplified.examples.bridge.shapes;
 
 import static java.lang.String.format;
 
-public class RGB implements Color{
+public class RGB implements Color {
     private int red;
 
     public RGB(int red, int green, int blue) {

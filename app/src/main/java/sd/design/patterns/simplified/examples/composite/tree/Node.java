@@ -8,11 +8,11 @@ public class Node implements Part {
 
     @Override
     public void printChilds() {
+        System.out.printf("Node: %s%n", this);
         leafs.forEach(Part::printChilds);
     }
 
     public void addChild(Part leaf) {
         leafs.add(leaf);
     }
-    public void test() {}
 }

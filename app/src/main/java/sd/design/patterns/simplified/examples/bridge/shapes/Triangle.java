@@ -1,7 +1,5 @@
 package sd.design.patterns.simplified.examples.bridge.shapes;
 
-import static java.lang.String.format;
-
 public class Triangle extends Shape {
     public Triangle(Color color) {
         super(color);
