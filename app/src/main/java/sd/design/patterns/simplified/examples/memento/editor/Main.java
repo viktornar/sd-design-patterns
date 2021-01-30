@@ -1,5 +1,11 @@
 package sd.design.patterns.simplified.examples.memento.editor;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.concurrent.ArrayBlockingQueue;
+
 public class Main {
     public static void main(String[] args) {
         final EditorText editorText = new EditorText();

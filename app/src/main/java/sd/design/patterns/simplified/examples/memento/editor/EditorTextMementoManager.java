@@ -12,5 +12,4 @@ public class EditorTextMementoManager {
     public String restore() {
         return mementos.pop();
     }
-
 }

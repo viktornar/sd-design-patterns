@@ -6,7 +6,7 @@ import java.util.OptionalDouble;
 
 public class Main {
     public static void main(String... args) {
-        StatisticsLogger executionTimesBaseStatistics = new ExecutionTimesBaseStatistics(new ArrayList<>(){{
+        StatisticsLogger executionTimesBaseStatistics = new ExecutionTimesBaseStatistics(new ArrayList<>() {{
             add(10.0);
             add(20.0);
             add(30.0);

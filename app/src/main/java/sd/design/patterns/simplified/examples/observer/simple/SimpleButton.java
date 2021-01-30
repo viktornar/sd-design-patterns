@@ -3,15 +3,15 @@ package sd.design.patterns.simplified.examples.observer.simple;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SimpleSubject implements Subject {
+public class SimpleButton implements Subject {
 	private List<Observer> observers;
 	private int value = 0;
 
-	public SimpleSubject() {
+	public SimpleButton() {
 		observers = new ArrayList<>();
 	}
 
-	public void registerObserver(Observer o) {
+	public void addActionListener(Observer o) {
 		observers.add(o);
 	}
 
@@ -25,7 +25,7 @@ public class SimpleSubject implements Subject {
 		}
 	}
 	
-	public void setValue(int value) {
+	public void onClick(int value) {
 		this.value = value;
 		notifyObservers();
 	}

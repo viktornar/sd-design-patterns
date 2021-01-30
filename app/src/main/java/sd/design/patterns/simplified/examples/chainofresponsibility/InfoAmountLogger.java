@@ -9,10 +9,10 @@ public class InfoAmountLogger extends AmountLogger {
 
     @Override
     public void log(Double amount) {
-        System.out.printf("Your amount is: %.2f%n", amount);
-
         if (nextProcessor != null && amount < AMOUNT_WARN_LIMIT) {
             nextProcessor.log(amount);
+        } else {
+            System.out.printf("Your amount is: %.2f%n", amount);
         }
     }
 }

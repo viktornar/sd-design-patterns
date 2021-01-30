@@ -1,12 +1,11 @@
 package sd.design.patterns.simplified.examples.observer.simple;
 
-public class SimpleObserver implements Observer {
+public class OnClickAction implements Observer {
 	private final String name;
 	private int value;
 
-	public SimpleObserver(String name, Subject simpleSubject) {
+	public OnClickAction(String name) {
 		this.name = name;
-		simpleSubject.registerObserver(this);
 	}
 	
 	public void update(int value) {
